@@ -1,0 +1,46 @@
+<div class="pt-5 pb-5">
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <div *ngIf="unauthorizedError" class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">Unauthorized Error!</h4>
+      <p class="mb-0">Your credentials are invalid</p>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Login: </span>
+      </div>
+
+      <input
+        name="login"
+        formControlName="login"
+        type="text"
+        class="form-control"
+        placeholder="Enter login..."
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Password: </span>
+      </div>
+
+      <input
+        name="password"
+        formControlName="password"
+        type="password"
+        class="form-control"
+        placeholder="Enter password..."
+      />
+    </div>
+
+    <div class="text-center">
+      <button
+        class="btn btn-lg btn-secondary"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div>

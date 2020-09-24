@@ -1,0 +1,80 @@
+<div class="pt-5 pb-5">
+<form [formGroup]="loginForm" (ngSubmit)="askForCode(loginForm.value)">
+  <div *ngIf="whitelistError" class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Whitelist alert!</h4>
+    <p>Your e-mail is not on a whitelist of users.</p>
+    <hr />
+    <p class="mb-0">
+      Before requesting login, you must contact the administrator and ask for
+      permission.
+    </p>
+  </div>
+
+  <div *ngIf="unauthorizedError" class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Unauthorized Error!</h4>
+    <p>Your code was invalid</p>
+    <hr />
+    <p class="mb-0">
+      You must request another code.
+    </p>
+  </div>
+
+  <p class="text-muted font-weight-light text-center">
+    Please enter your e-mail address that you passed to the administrator
+  </p>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Email: </span>
+    </div>
+
+    <input
+      name="email"
+      formControlName="email"
+      type="text"
+      class="form-control"
+      placeholder="Email"
+    />
+    <div class="input-group-append">
+      <button
+        *ngIf="!emailSent"
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!!emailSent"
+      >
+        Send
+      </button>
+    </div>
+  </div>
+</form>
+
+<form
+  [formGroup]="codeForm"
+  *ngIf="emailSent"
+  (ngSubmit)="verifyCode(codeForm.value)"
+>
+  <p class="text-muted font-weight-light text-center">
+    Please enter the code from your e-mail address
+  </p>
+
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Code: </span>
+    </div>
+    <input
+      name="code"
+      formControlName="code"
+      type="text"
+      class="form-control"
+      placeholder="Code"
+    />
+
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="submit">
+        Login
+      </button>
+    </div>
+  </div>
+</form>
+</div>

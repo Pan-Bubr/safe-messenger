@@ -1,0 +1,80 @@
+<div class="p-5">
+  <div class="row">
+    <button class="btn btn-sm btn-dark" (click)="returnToHomepage()">
+      Return to Home Page
+    </button>
+  </div>
+
+  <h3 class="row mt-3">Chat with {{ recipient$ | async }}</h3>
+  <p class="row text-muted">
+    <small>
+      If you suspect your keys may have been leaked, create a new identity.
+      <button class="btn btn-sm btn-danger" (click)="resetConnection()">
+        Create new identity
+      </button>
+    </small>
+  </p>
+  <div class="row"></div>
+
+  <div
+    *ngFor="let message of historyMessages$ | async; let i = index"
+    class="message"
+    [ngClass]="{ 'text-right': (recipient$ | async) === message.senderEmail }"
+  >
+    <div class="">
+      <small>
+        {{ message.sentAt | date: 'shortTime' }}
+      </small>
+      <div>
+        <div class="d-inline-block border rounded p-2">
+          {{ message.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngFor="let message of newMessages"
+    class="message"
+    [ngClass]="{ 'text-right': (recipient$ | async) === message.senderEmail }"
+  >
+    <div class="">
+      <small>
+        {{ message.sentAt | date: 'shortTime' }}
+      </small>
+      <div *ngIf="message.content">
+        <div class="d-inline-block border rounded p-2">
+          {{ message.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <form [formGroup]="chatForm" (ngSubmit)="sendMessage(chatForm.value)">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Send Message:</span>
+        </div>
+        <input
+          name="message"
+          formControlName="message"
+          type="text"
+          class="form-control"
+          placeholder="Enter message here..."
+          required
+        />
+
+        <div class="input-group-append">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!chatForm.valid"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginContainerComponent should match snapshot 1`] = `
+<ng-component>
+  <safe-messenger-admin-login>
+    <div
+      class="pt-5 pb-5"
+    >
+      <form
+        class="ng-untouched ng-pristine ng-invalid"
+        novalidate=""
+      >
+        
+        <div
+          class="input-group mb-3"
+        >
+          <div
+            class="input-group-prepend"
+          >
+            <span
+              class="input-group-text"
+            >
+              Login: 
+            </span>
+          </div>
+          <input
+            class="form-control ng-untouched ng-pristine ng-invalid"
+            formcontrolname="login"
+            name="login"
+            placeholder="Enter login..."
+            type="text"
+          />
+        </div>
+        <div
+          class="input-group mb-3"
+        >
+          <div
+            class="input-group-prepend"
+          >
+            <span
+              class="input-group-text"
+            >
+              Password: 
+            </span>
+          </div>
+          <input
+            class="form-control ng-untouched ng-pristine ng-invalid"
+            formcontrolname="password"
+            name="password"
+            placeholder="Enter password..."
+            type="password"
+          />
+        </div>
+        <div
+          class="text-center"
+        >
+          <button
+            class="btn btn-lg btn-secondary"
+            disabled=""
+            type="submit"
+          >
+             Login 
+          </button>
+        </div>
+      </form>
+    </div>
+  </safe-messenger-admin-login>
+</ng-component>
+`;

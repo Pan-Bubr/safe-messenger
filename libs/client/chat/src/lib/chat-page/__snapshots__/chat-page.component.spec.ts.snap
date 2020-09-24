@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatPageComponent should match snapshot 1`] = `
+<ng-component>
+  <safe-messenger-chat-page>
+    <div
+      class="p-5"
+    >
+      <div
+        class="row"
+      >
+        <button
+          class="btn btn-sm btn-dark"
+        >
+           Return to Home Page 
+        </button>
+      </div>
+      <h3
+        class="row mt-3"
+      >
+        Chat with mockEmail
+      </h3>
+      <p
+        class="row text-muted"
+      >
+        <small>
+           If you suspect your keys may have been leaked, create a new identity. 
+          <button
+            class="btn btn-sm btn-danger"
+          >
+             Create new identity 
+          </button>
+        </small>
+      </p>
+      <div
+        class="row"
+      />
+      
+      
+      <div
+        class="message"
+      >
+        <div
+          class=""
+        >
+          <small>
+              
+          </small>
+          
+          <div>
+            <div
+              class="d-inline-block border rounded p-2"
+            >
+               test 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row mt-4"
+      >
+        <form
+          class="ng-untouched ng-pristine ng-invalid"
+          novalidate=""
+        >
+          <div
+            class="input-group mb-3"
+          >
+            <div
+              class="input-group-prepend"
+            >
+              <span
+                class="input-group-text"
+              >
+                Send Message:
+              </span>
+            </div>
+            <input
+              class="form-control ng-untouched ng-pristine ng-invalid"
+              formcontrolname="message"
+              name="message"
+              placeholder="Enter message here..."
+              required=""
+              type="text"
+            />
+            <div
+              class="input-group-append"
+            >
+              <button
+                class="btn btn-primary"
+                disabled=""
+                type="submit"
+              >
+                 Send 
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </safe-messenger-chat-page>
+</ng-component>
+`;

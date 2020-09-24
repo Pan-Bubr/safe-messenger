@@ -1,0 +1,75 @@
+<div class="pt-3 pb-3">
+  <div class="text-right">
+    <button (click)="logout()" class="btn btn-secondary">
+      Log out
+    </button>
+  </div>
+</div>
+
+<div>
+  <form [formGroup]="addForm" (ngSubmit)="addUser(addForm.value)">
+    <div
+      *ngIf="
+        addForm.controls?.email?.errors?.email &&
+        addForm.controls?.displayName?.touched
+      "
+      class="alert alert-warning"
+      role="alert"
+    >
+      Email invalid
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">New User:</span>
+      </div>
+      <input
+        name="email"
+        formControlName="email"
+        type="text"
+        class="form-control"
+        placeholder="Enter email..."
+        required
+      />
+      <input
+        name="displayName"
+        formControlName="displayName"
+        type="text"
+        class="form-control"
+        placeholder="Enter display name..."
+        required
+      />
+
+      <div class="input-group-append">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!addForm.valid"
+        >
+          Add User
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="table-responsive-sm">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col">E-mail</th>
+        <th class="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let email of emails">
+        <td class="align-middle">{{ email }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="delete(email)">
+            Delete&nbsp;user
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

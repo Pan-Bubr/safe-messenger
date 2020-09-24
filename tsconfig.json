@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@safe-messenger/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@safe-messenger/api/common": ["libs/api/common/src/index.ts"],
+      "@safe-messenger/api/auth": ["libs/api/auth/src/index.ts"],
+      "@safe-messenger/api/chat": ["libs/api/chat/src/index.ts"],
+      "@safe-messenger/client/login": ["libs/client/login/src/index.ts"],
+      "@safe-messenger/client/home": ["libs/client/home/src/index.ts"],
+      "@safe-messenger/api/contacts": ["libs/api/contacts/src/index.ts"],
+      "@safe-messenger/client/profile": ["libs/client/profile/src/index.ts"],
+      "@safe-messenger/client/chat": ["libs/client/chat/src/index.ts"],
+      "@safe-messenger/client/common": ["libs/client/common/src/index.ts"],
+      "@safe-messenger/client/crypto": ["libs/client/crypto/src/index.ts"],
+      "@safe-messenger/client/invitations": [
+        "libs/client/invitations/src/index.ts"
+      ],
+      "@safe-messenger/client/admin": ["libs/client/admin/src/index.ts"],
+      "@safe-messenger/api/admin": ["libs/api/admin/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

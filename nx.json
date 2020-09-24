@@ -1,0 +1,68 @@
+{
+  "npmScope": "safe-messenger",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "api-interfaces": {
+      "tags": ["api", "client"]
+    },
+    "api": {
+      "tags": ["api"]
+    },
+    "api-common": {
+      "tags": ["api"]
+    },
+    "api-auth": {
+      "tags": ["api"]
+    },
+    "api-chat": {
+      "tags": ["api"]
+    },
+    "messenger-client": {
+      "tags": ["client"]
+    },
+    "client-login": {
+      "tags": ["client"]
+    },
+    "client-home": {
+      "tags": ["client"]
+    },
+    "api-contacts": {
+      "tags": ["api"]
+    },
+    "client-profile": {
+      "tags": ["client"]
+    },
+    "client-chat": {
+      "tags": ["client"]
+    },
+    "client-common": {
+      "tags": ["client"]
+    },
+    "client-crypto": {
+      "tags": ["client"]
+    },
+    "client-admin": {
+      "tags": ["client"]
+    },
+    "api-admin": {
+      "tags": ["api"]
+    }
+  }
+}

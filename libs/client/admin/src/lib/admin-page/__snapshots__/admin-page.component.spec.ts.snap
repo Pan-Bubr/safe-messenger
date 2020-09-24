@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginContainerComponent should match snapshot 1`] = `
+<ng-component>
+  <safe-messenger-admin-page>
+    <div
+      class="pt-3 pb-3"
+    >
+      <div
+        class="text-right"
+      >
+        <button
+          class="btn btn-secondary"
+        >
+           Log out 
+        </button>
+      </div>
+    </div>
+    <div>
+      <form
+        class="ng-untouched ng-pristine ng-invalid"
+        novalidate=""
+      >
+        
+        <div
+          class="input-group mb-3"
+        >
+          <div
+            class="input-group-prepend"
+          >
+            <span
+              class="input-group-text"
+            >
+              New User:
+            </span>
+          </div>
+          <input
+            class="form-control ng-untouched ng-pristine ng-invalid"
+            formcontrolname="email"
+            name="email"
+            placeholder="Enter email..."
+            required=""
+            type="text"
+          />
+          <input
+            class="form-control ng-untouched ng-pristine ng-invalid"
+            formcontrolname="displayName"
+            name="displayName"
+            placeholder="Enter display name..."
+            required=""
+            type="text"
+          />
+          <div
+            class="input-group-append"
+          >
+            <button
+              class="btn btn-primary"
+              disabled=""
+              type="submit"
+            >
+               Add User 
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="table-responsive-sm"
+    >
+      <table
+        class="table"
+      >
+        <thead>
+          <tr>
+            <th
+              class="col"
+            >
+              E-mail
+            </th>
+            <th
+              class="col"
+            >
+              Delete
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td
+              class="align-middle"
+            >
+              email
+            </td>
+            <td>
+              <button
+                class="btn btn-warning"
+              >
+                 Delete user 
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </safe-messenger-admin-page>
+</ng-component>
+`;

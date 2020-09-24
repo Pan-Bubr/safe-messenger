@@ -1,0 +1,104 @@
+<div class="home-page p-5">
+  <div class="row mt-3">
+    <h3>Profile</h3>
+  </div>
+  <div class="row">
+    <button class="btn btn-lg btn-primary mr-3" (click)="openProfile()">
+      Open Profile
+    </button>
+    <button (click)="logout()" class="btn btn-lg btn-secondary">
+      Log out
+    </button>
+  </div>
+  <div class="mt-5 row" *ngIf="(contacts$ | async).length">
+    <h3>Contacts</h3>
+    <table class="table">
+      <tr *ngFor="let contact of contacts$ | async">
+        <td class="text-left align-middle">
+          <span class="font-weight-bold">{{ contact.displayName }}</span
+          ><span class="text-muted"> ({{ contact.email }})</span>
+        </td>
+        <td class="text-right">
+          <button class="btn btn-secondary" (click)="openChat(contact)">
+            Open&nbsp;chat
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row mt-5" *ngIf="(invitationsReceived$ | async).length">
+    <h3>Invitations received</h3>
+    <table class="table">
+      <tr *ngFor="let invitations of invitationsReceived$ | async">
+        <td class="align-middle text-left">{{ invitations }}</td>
+        <td class="text-right">
+          <button class="btn btn-primary" (click)="accept(invitations)">
+            Accept
+          </button>
+          <button class="btn btn-danger ml-1" (click)="reject(invitations)">
+            Reject
+          </button>
+          <button class="btn btn-warning ml-1" (click)="block(invitations)">
+            Block
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="mt-3" *ngIf="(invitationsSent$ | async).length">
+    <h3 class="row">Invitations sent</h3>
+    <table class="table">
+      <tr *ngFor="let sent of invitationsSent$ | async">
+        <td class="text-left align-middle font-weight-bold">
+          {{ sent }}
+        </td>
+        <td class="text-right">
+          <button class="btn btn-secondary" (click)="cancel(sent)">
+            Cancel
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row mt-3">
+    <h3>Send invitation</h3>
+  </div>
+  <div class="row">
+    <div *ngIf="invitationError" class="alert alert-danger">
+      {{ invitationError }}
+    </div>
+  </div>
+  <div class="row">
+    <form
+      [formGroup]="invitationForm"
+      (ngSubmit)="sendInvitation(invitationForm.value)"
+    >
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Invite User:</span>
+        </div>
+        <input
+          name="email"
+          formControlName="email"
+          type="text"
+          class="form-control"
+          placeholder="Enter email..."
+          required
+        />
+
+        <div class="input-group-append">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!invitationForm.valid"
+          >
+            Send invitation
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
